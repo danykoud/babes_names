@@ -1,3 +1,5 @@
+from config import database, connect_string
+from BabiesNamesData import BabiesNamesData
 from flask import Flask, jsonify, render_template
 
 ######## INITIATE FLASK APP #########################
@@ -22,11 +24,9 @@ def show_apis():
     )    
 @app.route("/api/v1.0/Data")
 def get_data():
-
-    return jsonify()
-
-
+    
     return jsonify(db.get_all_data)
+
 if __name__ == '__main__':
     app.run(debug=True)
 

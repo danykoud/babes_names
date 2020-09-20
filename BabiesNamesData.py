@@ -40,7 +40,7 @@ def get_all_data (self):
         session = Session(self.engine)
 
         sel = [self.baby_names.name, self.baby_names.state,self.baby_names.sex, self.baby_names.number, self.baby_names.year, self.baby_names.latitude,self.baby_names.longitude,self.baby_names.city]
-        results= session.query(*sel).filter(baby_names.year >=2000 ).filter(baby_names.year <=2018)
+        results= session.query(*sel).filter(self.baby_names.year >=1980 ).filter(self.baby_names.year <=2018)
         all_data=[]
         for result in results: 
             d={}
