@@ -9,7 +9,9 @@ body {
   padding: 0;
   margin: 0;
 }
-
+h1{
+opacity: .5;
+}
 /* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
 .wrapper {
   position: relative;
@@ -98,7 +100,7 @@ select {
   padding: 20px;
   margin: 0;
   background: rgb(31, 30, 30);
-  background-image: url("../assets/img/gift-habeshaw-HGiIg_eOLfk-unsplash.jpg");
+  background-image: url('../img/gift-habeshaw-HGiIg_eOLfk-unsplash.jpg');
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;

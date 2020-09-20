@@ -17,7 +17,7 @@ class BabiesNamesData():
         self.tables = self.inspector.get_table_names()
         self.Base = automap_base()
         self.Base.prepare(self.engine, reflect=True)
-        self.names = self.Base.classes['names']
+        self.baby_names = self.Base.classes['baby_names']
         self.meta = MetaData()
         self.TestResults = Table('test_results_view', self.meta, 
                     autoload_with=self.engine)
@@ -36,11 +36,11 @@ def display_db_info(self):
 
 
 
-def get_Names_all (self):
+def get_all_data (self):
         session = Session(self.engine)
 
-        sel = [self.names.name, self.names.state,self.names.sex, self.names.number, self.names.year, self.names.latitude,self.names.longitude,self.names.city]
-        results= session.query(*sel).filter(names.year >=2000 ).filter(names.year <=2018)
+        sel = [self.baby_names.name, self.baby_names.state,self.baby_names.sex, self.baby_names.number, self.baby_names.year, self.baby_names.latitude,self.baby_names.longitude,self.baby_names.city]
+        results= session.query(*sel).filter(baby_names.year >=2000 ).filter(baby_names.year <=2018)
         all_data=[]
         for result in results: 
             d={}
@@ -56,3 +56,5 @@ def get_Names_all (self):
         all_data.append(result)
 if __name__ == '__main__':
     info = BabiesNamesData()
+    info.display_db_info()
+    print("\nBabiesNames All\n", info.get_all_data ())

@@ -1,88 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Baby Name Project</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="../css/styles.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <title>Data Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="../statics/css/style.css">
 </head>
 
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Home</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../data.html">Overview</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../data.html">Data</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../data.html">Graphs</a></li>
-                </ul>
-            </div>
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" > US BB NAMES
+            <img class="nav-ufo" src="../statics/img/download.jpg">
+          </a>
         </div>
+      </div>
     </nav>
-    <!-- Masthead-->
-    <header class="masthead">
-        <div class="container d-flex h-100 align-items-center">
-            <div class="mx-auto text-center">
-                <h1 class="mx-auto my-0 text-uppercase">Baby Name Project</h1>
-                <h2 class="text-white-50 mx-auto mt-2 mb-5">Data and Visualization Project with Names of Those Born in
-                    The United States.</h2>
-                <!-- <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a> -->
-            </div>
-        </div>
-    </header>
-
-    <!-- Container-->
-    <div class="container">
-        <!-- Overview Project Row-->
-        <section class="overview-section bg-light" id="overview">
-            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="../assets/img/newborns.jpg"
-                        alt="" /></div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-center text-lg-left">
-                        <h4>Baby Name Data Project</h4>
-                        <p class="text-black-50 mb-0">the project consists of displaying the names of babies per state since 1980. It  gives the user the ability to execute a search of most popular names by gender, the number of babies with the same name, and more  </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
+    <div class="hero text-center">
+      <h1>BABIES NAMES</h1>
+      <p>Popular Names by State </p>
     </div>
-    </section>
-
-
-    <!-- Footer-->
-    <footer class="footer bg-black small text-center text-white-50">
-        <div class="container">Copyright © 2020</div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                    <li class="filter list-group-item">
+                      <label for="date">Enter a State</label>
+                      <input class="form-control" id="State abbreviation" type="text" placeholder="ca">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="city">Enter the Sex </label>
+                      <input class="form-control" id="Sex" type="text" placeholder="M">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="state">Enter a Year</label>
+                      <input class="form-control" id="Year" type="text" placeholder="2011">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="country">Enter a Name</label>
+                      <input class="form-control" id="Name" type="text" placeholder="Sahara">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="shape">Select a Number/label>
+                      <input class="form-control" id="Number" type="text" placeholder="2984">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="shape">Select a Number/label>
+                      <input class="form-control" id="Laritude" type="text" placeholder="37.271875">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="shape">Select a Number/label>
+                      <input class="form-control" id="Longitude" type="text" placeholder="-119.270415">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="shape">Select a Number/label>
+                      <input class="form-control" id="state" type="text" placeholder="Texas">
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <h1 class="text-center loader" id="loader">Loading...</h1>
+            <table id="ufo-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">id</th>
+                  <th class="table-head">State Abbreviation</th>
+                  <th class="table-head">Sex</th>
+                  <th class="table-head">Year</th>
+                  <th class="table-head">Name</th>
+                  <th class="table-head">Number</th>
+                  <th class="table-head">Latitude</th>
+                  <th class="table-head">Longitude</th>
+                  <th class="table-head">State</th>
+                  
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">Names </span>
     </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="../statics/js/app.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Babies Name in the U.S.A from 1960 t0 2018</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="table-responsive">
+    <h1 align="center">Babies Name in the U.S.A from 1960 t0 2018</h1>
+    <br />
+    <div align="center">
+     <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
+    </div>
+    <br />
+    <div id="babyNames_data">
+    </div>
+   </div>
+  </div>
+  <script src="./data.js"></script>
+ </body>
+</html> -->
