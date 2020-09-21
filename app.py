@@ -25,13 +25,8 @@ def show_apis():
 @app.route("/api/v1.0/Data")
 def get_data():
     
-    return jsonify(db.get_all_data)
+    return jsonify(db.all_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
 
