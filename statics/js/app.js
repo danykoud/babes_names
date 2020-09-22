@@ -1,7 +1,7 @@
 // from data.js
 // function buildtable() {
 
-  d3.json("/api/v1.0/Data", function (data) {
+  d3.csv("../Resources/Names.csv", function (data) {
 
     console.log(data);
     var tableData = data
