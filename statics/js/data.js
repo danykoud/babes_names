@@ -1,60 +1,107 @@
-var data = d3.csv("./Names.json").then(function(data) {
-    console.log(data);
+// Store our API endpoint inside queryUrl
+
+// Perform a GET request to the query URL
+d3.json("../Resources/Names.geojson").then( function(data) {
+
+  FeatureCollection(data.features);
+  console.log(data)
 });
 
+function FeatureCollection(usnames) {
 
+  // Define a function we want to run once for each feature in the features array
+  // Give each feature a popup describing the place and time of the earthquake
+  function onEachFeature(feature, layer) {
+    layer.bindPopup("<h3>"+ feature.properties.Name +
+      "</h3><hr><p>" + "year:"+feature.properties.year + "</p><hr><p>"+ "Number:" + feature.properties.Number  +"</p>");
+  }
 
+//   Define function to create the circle radius based on the magnitude
+  function radiuslength(Number) {
+    return Number * 20000;
+  }
 
+  /// Function that will determine the color of a neighborhood based on the borough it belongs to
+function  circleColor(Number) {
+  switch (true) {
+  case Number < 1500:
+    return "#ccff33";
+  case Number < 2000:
+    return "#ffff33";
+  case Number < 2500:
+    return "#ffcc33";
+  case Number < 3000:
+    return "#ff9933";
+  case Number < 3500:
+    return "#ff6633";
+  default:
+    return "#ff3333";
+  }
+}
 
+  // Create a GeoJSON layer containing the features array on the usnames object
+  // Run the onEachFeature function once for each piece of data in the array
+  var BabiesNames = L.geoJSON(usnames, {
+    pointToLayer: function(usnames, coordinates) {
+      return L.circle(coordinates, {
+        radius: radiuslength(usnames.properties.Number),
+        color: circleColor(usnames.properties.Number),
+        fillOpacity: .5
+      });
+    },
+    onEachFeature: onEachFeature
+  });
 
+  // Sending our BabiesNames layer to the createMap function
+  createMap(BabiesNames);
+}
 
+function createMap(BabiesNames) {
 
+  // Adding tile layer
+const streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+  tileSize: 512,
+  maxZoom: 18,
+  zoomOffset: -1,
+  id: "mapbox/streets-v11",
+  accessToken: 'pk.eyJ1Ijoia291ZGVkZWRhbnkiLCJhIjoiY2tleGp4NzVjMDJ3MjJ4cXQ3dzdnZ3R2biJ9.ieqkZCOGvpGabohutshteA'
+})
 
+const darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+  maxZoom: 18,
+  id: "dark-v10",
+  accessToken: 'pk.eyJ1Ijoia291ZGVkZWRhbnkiLCJhIjoiY2tleGp4NzVjMDJ3MjJ4cXQ3dzdnZ3R2biJ9.ieqkZCOGvpGabohutshteA'
+})
+  // Create the faultline layer
+  var faultLine = new L.LayerGroup();
+  
+  // Define a baseMaps object 
+  const baseMaps = {
+    "Street Map": streetmap,
+    "Dark Map": darkmap
+  };
 
+  // Create overlay object
+  var overlayMaps = {
+    BabiesNames: BabiesNames,
+    Fault: faultLine
+  };
 
+  // Create our map
+  var myMap = L.map("map", {
+    center: [
+      37.09, -95.71
+    ],
+    zoom: 4,
+    layers: [ streetmap , BabiesNames, faultLine]
+  });
 
-
-
-
-
-
-
-
-
-
-
-
-// $(document).ready(function(){
-//     $('#load_data').click(function(){
-//      $.ajax({
-//       url:"./ALL_STATES.csv",
-//       dataType:"text",
-//       success:function(data)
-//       {
-
-//        var babyNames_data = data.split(/\r?\n|\r/);
-//        var table_data = '<table class="table table-bordered table-striped">';
-//        for(var count = 0; count<babyNames_data.length; count++)
-//        {
-//         var cell_data = babyNames_data [count].split(",");
-//         table_data += '<tr>';
-//         for(var cell_count=0; cell_count<cell_data.length; cell_count++)
-//         {
-//          if(count === 0)
-//          {
-//           table_data += '<th>'+cell_data[cell_count]+'</th>';
-//          }
-//          else
-//          {
-//           table_data += '<td>'+cell_data[cell_count]+'</td>';
-//          }
-//         }
-//         table_data += '</tr>';
-//        }
-//        table_data += '</table>';
-//        $('#babyNames_data').html(table_data);
-//       }
-//      });
-//     });
-    
-//    });
+  // Create a layer control
+  // Pass in our baseMaps and overlayMaps
+  // Add the layer control to the map
+  L.control.layers(baseMaps, overlayMaps, {
+    collapsed: false
+  }).addTo(myMap);
+}
