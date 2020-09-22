@@ -1,22 +1,24 @@
 // Store our API endpoint inside queryUrl
 
 // Perform a GET request to the query URL
-d3.json("../Resources/Names.geojson").then( function(data) {
+d3.json("/api/v1.0/Data",function(data) {
 
-  FeatureCollection(data.features);
+  // FeatureCollection(data.features);
+  // console.log(data.features)
   console.log(data)
+
 });
 
 function FeatureCollection(usnames) {
 
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the place and time of the earthquake
-  function onEachFeature(feature, layer) {
-    layer.bindPopup("<h3>"+ feature.properties.Name +
-      "</h3><hr><p>" + "year:"+feature.properties.year + "</p><hr><p>"+ "Number:" + feature.properties.Number  +"</p>");
+  function onEachFeature(feature, layer) { 
+    layer.bindPopup("<h3>"+ feature.geometry.coordinates +"</h3><hr><p>" + feature.properties.Name +
+      "</p><hr><p>" + "year:"+feature.properties.year + "</p><hr><p>"+ "Number:" + feature.properties.Number  +"</p>");
   }
 
-//   Define function to create the circle radius based on the magnitude
+//   Define function to create the circle radius based on the number
   function radiuslength(Number) {
     return Number * 20000;
   }
@@ -42,13 +44,14 @@ function  circleColor(Number) {
   // Create a GeoJSON layer containing the features array on the usnames object
   // Run the onEachFeature function once for each piece of data in the array
   var BabiesNames = L.geoJSON(usnames, {
-    pointToLayer: function(usnames, coordinates) {
-      return L.circle(coordinates, {
+    pointToLayer: function(usnames, lonlat) {
+      return L.circle(lonlat, {
         radius: radiuslength(usnames.properties.Number),
         color: circleColor(usnames.properties.Number),
         fillOpacity: .5
       });
     },
+    
     onEachFeature: onEachFeature
   });
 
@@ -64,15 +67,15 @@ const streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{
   tileSize: 512,
   maxZoom: 18,
   zoomOffset: -1,
-  id: "mapbox/streets-v11",
-  accessToken: 'pk.eyJ1Ijoia291ZGVkZWRhbnkiLCJhIjoiY2tleGp4NzVjMDJ3MjJ4cXQ3dzdnZ3R2biJ9.ieqkZCOGvpGabohutshteA'
+  id: "mapbox/streets-v10",
+  accessToken: API_KEY
 })
 
 const darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
   maxZoom: 18,
   id: "dark-v10",
-  accessToken: 'pk.eyJ1Ijoia291ZGVkZWRhbnkiLCJhIjoiY2tleGp4NzVjMDJ3MjJ4cXQ3dzdnZ3R2biJ9.ieqkZCOGvpGabohutshteA'
+  accessToken: API_KEY
 })
   // Create the faultline layer
   var faultLine = new L.LayerGroup();

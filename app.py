@@ -25,10 +25,12 @@ session = Session(engine)
 
 @app.route("/")
 def welcome():
+
     return  render_template('index.html')
 
 @app.route("/graph")
 def graph():
+
     return  render_template('map.html')
 
 @app.route("/api/v1.0")
@@ -41,7 +43,7 @@ def show_apis():
     )  
 
 @app.route("/api/v1.0/gender")
-def Gender_names(sum):
+def Gender_names():
     Fem_names= session.query(baby_names.Name,baby_names.Number ).filter(baby_names.Sex=="F").order_by(baby_names.Number.desc()).all()
     Male_names= session.query(baby_names.Name,baby_names.Number ).filter(baby_names.Sex=="F").order_by(baby_names.Number.desc()).all()
     Gender_F=[]
@@ -52,8 +54,8 @@ def Gender_names(sum):
     for j in Fem_names:
         Fem_F={"Female_names":j.Name, "Female_Number":j.Number}
         Gender_F.append(Fem_F)
-    sum= Gender_F + Gender_M
-    return jsonify('sum')
+         
+    return jsonify(Gender_F + Gender_M)
         
 
   
@@ -66,7 +68,7 @@ def all_data():
     for r in results:
         dict={"name":r.Name,"year":r.Year, "sex":r.Sex,"number":r.Number, "long":r.Longitude, "lat":r.Latitude, "state":r.City}
         data_map.append(dict)
-    return jsonify('data_map')
+    return jsonify(data_map)
 
 if __name__ == '__main__':
     app.run(debug=True)
