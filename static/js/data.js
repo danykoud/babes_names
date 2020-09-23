@@ -1,7 +1,7 @@
 // Store our API endpoint inside queryUrl
 
 // Perform a GET request to the query URL
-d3.json("/api/v1.0/Data").then(function(data) {
+d3.json("../static/Resources/Names.geojson").then(function(data) {
 
   // FeatureCollection(data.features);
 

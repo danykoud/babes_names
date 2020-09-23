@@ -14,16 +14,47 @@
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
   crossorigin=""></script>
-
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
-  <link rel="stylesheet" href="/statics/css/map.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="/static/css/map.css"> -->
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/map.css') }}">
  
 </head>
-<body> 
-  <div id="map"></div>
 
+<body> 
+  <div  class="Container">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="{{url_for('welcome')}}" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="{{url_for('show_apis')}}" role="tab" aria-controls="profile" aria-selected="false">All link</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="messages-tab" data-toggle="tab" href="{{url_for('Gender_names')}}" role="tab" aria-controls="messages" aria-selected="false">Names by gender</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="settings-tab" data-toggle="tab" href="{{url_for('all_data')}}" role="tab" aria-controls="settings" aria-selected="false">summary data</a>
+    </li>
+  </ul>
+  
+  <!-- Tab panes -->
+
+  <div class="row">
+    <div class="col-md-6 col-md-push-6"><div id="map-id"></div></div>
+    <div class="col-md- 6col-md-pull-6"><div id="plot"></div></div>
+  </div>
+  <div><p id="tx">In this visualisation we have the most popular names in the us since 1980</p></div>
+</div>
 <script src="https://d3js.org/d3.v6.min.js"></script>
-<script src='/statics/js/data.js'></script>
-<script src='/statics/js/config.js'></script>
+<!-- <script src='/statics/js/data.js'></script> -->
+<!-- <script src='/statics/js/config.js'></script> -->
+<script src="{{ url_for('static', filename='js/data.js') }}"></script>
+<script src="{{ url_for('static', filename='js/config.js') }}"></script>
+<!-- <script src='/static/js/plot.js'></script> -->
+<script src="{{ url_for('static', filename='js/plot.js') }}"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
 </body>
 </html>

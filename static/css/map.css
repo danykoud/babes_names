@@ -8,7 +8,9 @@ body,
 html {
   height: 100%;
 }
-
+#nav  {
+color: dodgerblue;
+}
 
 /* classes for leaflet legend */
 .legend {
