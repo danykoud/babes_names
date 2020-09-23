@@ -22,25 +22,27 @@ session = Session(engine)
 #################################################
 # Flask Routes
 #################################################
-
+@app.route ("/home")
 @app.route("/")
 def welcome():
-
-    return  render_template('index.html')
-
-@app.route("/graph")
-def graph():
-
-    return  render_template('map.html')
+    return render_template('index.html')
 
 @app.route("/api/v1.0")
 def show_apis():
     """List all available api routes."""
     return (
+        f"<h2>CHOOSE YOUR ROUTE AND HAVE YOUR YOUR VISUAL:</h2>"
+
         f"<h4>Available Routes:</h4>"
-         f'<a href="/api/v1.0/genderpython">/api/v1.0/gender</a><br/>'
+
+         f'<a href="/api/v1.0/graph">/api/v1.0/graph</a><br/>'
+         f'<a href="/api/v1.0/gender">/api/v1.0/gender</a><br/>'
         f'<a href="/api/v1.0/Data">/api/v1.0/Data</a><br/>'        
     )  
+@app.route("/graph")
+def graph():
+
+    return  render_template('map.html')
 
 @app.route("/api/v1.0/gender")
 def Gender_names():

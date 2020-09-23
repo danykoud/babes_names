@@ -1,10 +1,10 @@
 // Store our API endpoint inside queryUrl
 
 // Perform a GET request to the query URL
-d3.json("/api/v1.0/Data",function(data) {
+d3.json("/api/v1.0/Data").then(function(data) {
 
   // FeatureCollection(data.features);
-  // console.log(data.features)
+
   console.log(data)
 
 });
@@ -14,7 +14,7 @@ function FeatureCollection(usnames) {
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the place and time of the earthquake
   function onEachFeature(feature, layer) { 
-    layer.bindPopup("<h3>"+ feature.geometry.coordinates +"</h3><hr><p>" + feature.properties.Name +
+    layer.bindPopup("<h3>"+ feature.Geomatry.coordinates +"</h3><hr><p>" + feature.properties.Name +
       "</p><hr><p>" + "year:"+feature.properties.year + "</p><hr><p>"+ "Number:" + feature.properties.Number  +"</p>");
   }
 

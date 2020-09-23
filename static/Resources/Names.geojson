@@ -1,7 +1,5 @@
 {
 "type": "FeatureCollection",
-"name": "Names",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4267" } },
 "features": [
 { "type": "Feature", "properties": { "State": "CA", "Sex": "F", "Year": "1980", "Name": "Jennifer", "Number": "5611", "Latitude": 37.2718745, "Longitude": -119.2704153, "City": "California" }, "geometry": { "type": "Point", "coordinates": [ -119.2704153, 37.2718745 ] } },
 { "type": "Feature", "properties": { "State": "CA", "Sex": "F", "Year": "1980", "Name": "Melissa", "Number": "2984", "Latitude": 37.2718745, "Longitude": -119.2704153, "City": "California" }, "geometry": { "type": "Point", "coordinates": [ -119.2704153, 37.2718745 ] } },
