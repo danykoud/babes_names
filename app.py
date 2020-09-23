@@ -36,7 +36,7 @@ def show_apis():
         f"<h4>Available Routes:</h4>"
 
         f'<a href="/home">home</a><br/>'
-        f'<a href="/api/v1.0/graph">/api/v1.0/graph</a><br/>'
+        f'<a href="/graph">graph</a><br/>'
         f'<a href="/api/v1.0/gender">/api/v1.0/gender</a><br/>'
         f'<a href="/api/v1.0/Data">/api/v1.0/Data</a><br/>'        
     )  
