@@ -2,14 +2,14 @@
 
 ## Project Goal <hr/>
 
-The goal is to give a clear visualization of the most popular babies' names in the USA (by state or per year) from 1980 to 2018.
+The goal of the project is to visualize the most popular names in the USA (by state or per year) from 1980 to 2018.
 
 ## Work Process <hr/>
 
 #### ETL: EXTRACT - TRANSFORM - LOAD
 
 * Extraction:
-  We extracted our first tables from the social security websites as text files. The tables were dispatched by state and were all in text format. We ended up working with roughly 52 tables in total. Our second table was the USA latitude and longitude for each state that we extracted from Kaggle.
+  We extracted our first tables from the social security webside as text files. The tables were diapached by state since we chose to work with the popula name by state, we had rougthly 52 tables in total. Our second table is the USA latitude and longitude for each state that we extracted from Kaggle.
 
 
     + Sources:
@@ -20,14 +20,48 @@ The goal is to give a clear visualization of the most popular babies' names in t
 
 * Transform:
   
-Our data was a report of the US babies' names by state from 1910 to 2018, and hopefully, we didn't have empty rows. The work consisted of cleaning the data by converting the text files to CSV, removing unnecessary columns, combining the table, and selecting the desired data.
+Our data was a report of the US babies' names by state from 1910 to 2018 and hopefully, we didn't have empty rows. The work consisted of cleaning the data by converting the text files to CSV, removing unnecessary columns, combining the table, and selecting the desired data to work with.
 
 * Load:
-we used PostgreSQL as our database
+we used postgresql as our database
 
 ### Heroku-Postgres <hr/>
 
-This step consisted of uploading our data in the cloud through the connection of Heroku with Postgres. 
+This step consisted of uploading our data in the cloud through the connection of Heroku  with Postgres 
 
 
 ### Working with Python and Flash-Sqlalchemy <hr/>
+
+At this stage, we needed to create a python API that will generate the HTML file, the link of our __jsonified__ data, and the structure of our application on Heroku. 
+
+
+### VIsualization
+
++ HTML
+
++ CSS
+
++ Javascript
+
+
+**home**   dynamic table with the that  displays the input of the user 
+
+
+![](static/Resources/project_2_gift.gif)
+
+ 
+**Map&graph**   displays the most popular babies names since 1980 and a leflet geomap that shows names by state and year since 1980.
+
+![](static/Resources/project_2_gift_3.gif)
+
+**Navigation** 
+
+![](static/Resources/project_2_gift_2.gif)
+
+
+
+
+
+
+
+
