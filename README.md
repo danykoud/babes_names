@@ -54,10 +54,6 @@ At this stage, we needed to create a python API that will generate the HTML file
 
 ![](static/Resources/project_2_gift_3.gif)
 
-**Navigation** 
-
-![](static/Resources/project_2_gift_2.gif)
-
 
 
 
