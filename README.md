@@ -1,6 +1,6 @@
-# Baby_Names_Visualization :
+# Baby_Names_Visualization <hr>
 
-## Project Goal <hr/>
+## Project Goal :
 
 The goal of the project is to visualize the most popular names in the USA (by state or per year) from 1980 to 2018.
 
@@ -14,9 +14,9 @@ The goal of the project is to visualize the most popular names in the USA (by st
 
     + Sources:
   
-        https://www.kaggle.com/washimahmed/usa-latlong-for-state-abbreviations
+       - https://www.kaggle.com/washimahmed/usa-latlong-for-state-abbreviations
 
-        https://www.ssa.gov/oact/babynames/decades/century.html
+       - https://www.ssa.gov/oact/babynames/decades/century.html
 
 * Transform:
   
