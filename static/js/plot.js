@@ -10,7 +10,7 @@ d3.json("../static/Resources/namb.json").then( importedData => {
     });
   
     // Slice the first 10 objects for plotting
-    data = data.slice(0, 200);
+    data = data.slice(0, 500);
   
     // Reverse the array due to Plotly's defaults
     data = data.reverse();
@@ -30,7 +30,7 @@ d3.json("../static/Resources/namb.json").then( importedData => {
   
     // Apply the group bar mode to the layout
     var layout = {
-      title: "US Baby names",
+      title: "US most populas babies' names",
       margin: {
         l: 100,
         r: 100,

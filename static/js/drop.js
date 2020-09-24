@@ -2,7 +2,7 @@
 $(document).ready(function(){
     $('#load_data').click(function(){
      $.ajax({
-      url:"../static/Resources/Names.csv",
+      url:"../static/Resources/ALL_STATES.csv",
       dataType:"text",
       success:function(data)
       {
