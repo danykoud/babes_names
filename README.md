@@ -32,7 +32,7 @@ This step consisted of uploading our data in the cloud through the connection of
 
 ### Working with Python and Flash-Sqlalchemy <hr/>
 
-At this stage, we needed to create a python API that will generate the HTML file, the link of our __jsonified__ data, and the structure of our application on Heroku. 
+At this stage, we needed to create a python API that will generate the HTML file, the link of our _jsonified_ data, and the structure of our application on Heroku. 
 
 
 ### VIsualization
@@ -44,13 +44,13 @@ At this stage, we needed to create a python API that will generate the HTML file
 + Javascript
 
 
-**home**   dynamic table with the that  displays the input of the user 
+**home**   dynamic table that  displays the input of the user 
 
 
 ![](static/Resources/project_2_gift.gif)
 
  
-**Map&graph**   displays the most popular babies names since 1980 and a leflet geomap that shows names by state and year since 1980.
+**Map&graph**   displays the most popular babies' names since 1980 and a leflet geomap that shows names by state and year since 1980.
 
 ![](static/Resources/project_2_gift_3.gif)
 
