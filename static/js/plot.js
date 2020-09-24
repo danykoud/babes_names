@@ -20,7 +20,7 @@ d3.json("../static/Resources/namb.json").then( importedData => {
       x: data.map(row => row.Number),
       y: data.map(row => row.Name),
       text: data.map(row => row.Name),
-      name: "Us Baby Names",
+      name: "US most popular Babies' Names",
       type: "bar",
       orientation: "h"
     };
