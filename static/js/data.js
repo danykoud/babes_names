@@ -97,7 +97,7 @@ function createMap(BabiesNames) {
       37.09, -95.71
     ],
     zoom: 4,
-    layers: [ streetmap , BabiesNames, state]
+    layers: [ streetmap , BabiesNames, faultLine]
   });
 
   // Create a layer control
