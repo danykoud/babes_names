@@ -14,7 +14,7 @@ function FeatureCollection(usnames) {
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the place and time of the earthquake
   function onEachFeature(feature, layer) { 
-    layer.bindPopup("<h3>"+feature.properties.state +"</h3><hr><p>"  + feature.properties.Name +"</p><hr><p>" + "year:"+ new Date (feature.properties.year) + "</p><hr><p>"+ "Number:" + feature.properties.Number  +"</p>");
+    layer.bindPopup("<h3>"+feature.properties.state +"</h3><hr><p>"  + feature.properties.Name +"</p><hr><p>" + "year: 1980 to 2018" + "</p><hr><p>"+ "Number:" + feature.properties.Number  +"</p>");
   }
 
   // Create a GeoJSON layer containing the features array on the usnames object
@@ -24,8 +24,8 @@ function FeatureCollection(usnames) {
       return L.marker(lonlat, {
         con: "ion-minus-circled",
     iconColor: "white",
-    markerColor: "orange",
-    shape: "penta"
+    markerColor: "blue",
+    shape: "circle"
       });
     },
     
