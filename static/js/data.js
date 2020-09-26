@@ -19,7 +19,7 @@ function FeatureCollection(usnames) {
 
 //   Define function to create the circle radius based on the number
   function radiuslength(Number) {
-    return Number * 20000;
+    return Number / 2000;
   }
 
   /// Function that will determine the color of a neighborhood based on the borough it belongs to
@@ -88,7 +88,7 @@ function createMap(BabiesNames) {
   // Create overlay object
   var overlayMaps = {
     BabiesNames: BabiesNames,
-    Fault: faultLine
+    state: faultLine
   };
 
   // Create our map
@@ -97,7 +97,7 @@ function createMap(BabiesNames) {
       37.09, -95.71
     ],
     zoom: 4,
-    layers: [ streetmap , BabiesNames, faultLine]
+    layers: [ streetmap , BabiesNames, state]
   });
 
   // Create a layer control
