@@ -20,14 +20,14 @@ The goal of the project is to visualize the most popular babies'names  (by state
 
 * Transform:
   
-Our data was a report of the US babies' names by state from 1910 to 2018 and hopefully, we didn't have empty rows. The work consisted of cleaning the data by converting the text files to CSV, removing unnecessary columns, combining the table, and selecting the desired data to work with.
+Our data was a report of the US babies' names by state from 1910 to 2018, and hopefully, we didn't have empty rows. The work consisted of cleaning the data by converting the text files to CSV, removing unnecessary columns, combining the table, and selecting the desired data.
 
 * Load:
 we used PostgreSQL as our database
 
 ### Heroku-Postgres <hr/>
 
-This step consisted of uploading our data in the cloud through the connection of Heroku  with Postgres 
+This step consisted of uploading our data in the cloud through the connection of Heroku with Postgres. 
 
 
 ### Working with Python and Flash-Sqlalchemy <hr/>
