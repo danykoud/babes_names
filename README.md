@@ -53,10 +53,7 @@ At this stage, we needed to create a python API that will generate the HTML file
 **Map&graph**   displays the most popular babies' names since 1980 and a leflet geomap that shows names by state and year since 1980.
 
 ![](static/Resources/project_2_gift_3.gif)
-
-
-
-
+![](static/Resources/Capture_pic.PNG)
 
 
 
