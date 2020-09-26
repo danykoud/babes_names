@@ -17,37 +17,15 @@ function FeatureCollection(usnames) {
     layer.bindPopup("<h3>"+feature.properties.state +"</h3><hr><p>"  + feature.properties.Name +"</p><hr><p>" + "year:"+ new Date (feature.properties.year) + "</p><hr><p>"+ "Number:" + feature.properties.Number  +"</p>");
   }
 
-//   Define function to create the circle radius based on the number
-  function radiuslength(Number) {
-    return Number / 2000;
-  }
-
-  /// Function that will determine the color of a neighborhood based on the borough it belongs to
-function  circleColor(Number) {
-  switch (true) {
-  case Number < 1500:
-    return "#ccff33";
-  case Number < 2000:
-    return "#ffff33";
-  case Number < 2500:
-    return "#ffcc33";
-  case Number < 3000:
-    return "#ff9933";
-  case Number < 3500:
-    return "#ff6633";
-  default:
-    return "#ff3333";
-  }
-}
-
   // Create a GeoJSON layer containing the features array on the usnames object
   // Run the onEachFeature function once for each piece of data in the array
   var BabiesNames = L.geoJSON(usnames, {
     pointToLayer: function(usnames, lonlat) {
-      return L.circle(lonlat, {
-        radius: radiuslength(usnames.properties.Number),
-        color: circleColor(usnames.properties.Number),
-        fillOpacity: .5
+      return L.marker(lonlat, {
+        con: "ion-minus-circled",
+    iconColor: "white",
+    markerColor: "orange",
+    shape: "penta"
       });
     },
     
