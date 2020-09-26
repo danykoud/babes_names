@@ -9,7 +9,7 @@ The goal of the project is to visualize the most popular babies'names  (by state
 #### ETL: EXTRACT - TRANSFORM - LOAD
 
 * Extraction:
-  We extracted our first tables from the social security website. We had roughly 52 tables in total. Our second table is the USA latitude and longitude for each state that we extracted from Kaggle.
+  We extracted our first tables from the social security website, and we had roughly 52 tables in total. Our second table is the USA latitude and longitude for each state that we extracted from Kaggle.
 
 
     + Sources:
@@ -20,7 +20,7 @@ The goal of the project is to visualize the most popular babies'names  (by state
 
 * Transform:
   
-Our data was a report of the US babies' names by state from 1910 to 2018, and hopefully, we didn't have empty rows. The work consisted of cleaning the data by converting the text files to CSV, removing unnecessary columns, combining the table, and selecting the desired data.
+Our data was a report of the US babies' names by state from 1910 to 2018, and hopefully, we didn't have empty rows. The work consisted of cleaning the data by converting the text files to CSV, removing unnecessary columns, combining tables, and selecting the desired data.
 
 * Load:
 we used PostgreSQL as our database
@@ -32,7 +32,7 @@ This step consisted of uploading our data in the cloud through the connection of
 
 ### Working with Python and Flash-Sqlalchemy <hr/>
 
-At this stage, we needed to create a python API that will generate the HTML file, the link of our _jsonified_ data, and the structure of our application on Heroku. 
+At this stage, we created a python API that generates the HTML file, the link of our _jsonified_ data, and the structure of our application on Heroku. 
 
 
 ### VIsualization
@@ -54,3 +54,7 @@ At this stage, we needed to create a python API that will generate the HTML file
 
 ![](static/Resources/project_2_gift_3.gif)
 ![](static/Resources/Capture_pic.PNG)
+
+
+
+
